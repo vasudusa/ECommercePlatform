@@ -1,0 +1,4 @@
+﻿# ECommercePlatform
+
+Initial project repository.
+
