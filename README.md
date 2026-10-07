@@ -3,31 +3,46 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/vasudusa/ECommercePlatform)
 ![GitHub last commit](https://img.shields.io/github/last-commit/vasudusa/ECommercePlatform)
 ![GitHub top language](https://img.shields.io/github/languages/top/vasudusa/ECommercePlatform)
-![Static Badge](https://img.shields.io/badge/Stack-.NET 9 / C# / ASP.NET Core-blueviolet)
+![Static Badge](https://img.shields.io/badge/Stack-.NET%209%20%2F%20C%23%20%2F%20ASP.NET%20Core-blueviolet)
 
-A .NET e-commerce platform for storefront, catalog, and order workflows.
+A complete .NET e-commerce API for product catalog, cart-related order handling, dashboard metrics, and deployment-ready storefront operations.
 
 ## Overview
-This project is organized as a standalone repository and is ready for deployment, collaboration, and version tracking.
+This repository now contains a working backend foundation for a storefront, with in-memory product data, product management endpoints, order creation, and summary metrics.
 
 ## Tech Stack
-- .NET 9|C#|ASP.NET Core
-- Category: Backend
+- .NET 9
+- C# / ASP.NET Core
+- OpenAPI support
+- In-memory data layer for local prototyping
 
 ## Features
-- Clean project structure
-- Version-controlled source code
-- Documentation-ready setup
-- Repository ready for deployment and collaboration
+- Product listing and detail retrieval
+- Product creation endpoint
+- Order creation with stock validation
+- Health and dashboard summaries
+- CORS-enabled API for frontend integration
 
-## Run / Setup
-`ash
+## Run locally
+```bash
 cd D:\ECommercePlatform
-# install dependencies for the project
-# then run the app according to the project README or package setup
-`
+dotnet restore
+dotnet run
+```
 
-## Repository Status
-- Git initialized
-- README updated
-- Project organized for GitHub publishing
+Then open:
+- http://localhost:5000/health
+- http://localhost:5000/api/products
+- http://localhost:5000/api/dashboard
+
+## Example API calls
+```bash
+curl http://localhost:5000/api/products
+curl -X POST http://localhost:5000/api/products -H "Content-Type: application/json" -d '{"name":"Travel Lamp","category":"Home","price":49.99,"stock":10,"description":"Portable lamp for desk use."}'
+```
+
+## Project status
+- Functional product catalog API
+- Order lifecycle foundation in place
+- Dashboard summary ready for frontend integration
+- Ready for next stage: database persistence, authentication, and checkout flow
